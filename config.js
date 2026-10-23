@@ -33,8 +33,8 @@ module.exports = {
   //  ADMIN  (RAHASIA)
   // ------------------------------------------------------------------
 admin: {
-  username: 'isi_sendiri',
-  password: 'isi_sendiri_yang_kuat',
+  username: 'Malixx',
+  password: 'Lixx1',
   sessionSecret: 'aa3c47880a7af36e54927e2325f006f720cb50692045266b',
 },
 };

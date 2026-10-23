@@ -1,8 +1,12 @@
-/* Hero / banner halaman utama */
+/* Hero / banner halaman utama — tinggi banner dibuat tetap agar ringkas di HP */
+
+:root {
+  --hero-h: 128px;
+}
 
 .hero {
   background: var(--hero);
-  padding: 34px 0 24px;
+  padding: 24px 0 18px;
   text-align: center;
   border-bottom: 1px solid var(--line);
   position: relative;
@@ -14,205 +18,170 @@
   z-index: 1;
 }
 
-@keyframes fy {0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-14px) rotate(calc(var(--r) * -1))}}
+@keyframes fy {0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
+/* Badge bahasa dekoratif: kecil dan tenang */
 .fb {
   position: absolute;
   z-index: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   display: grid;
   place-items: center;
   font-style: normal;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 11px;
+  letter-spacing: .02em;
   color: var(--or);
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: 0 8px 20px rgba(37,99,235,.2);
-  animation: fy 4s ease-in-out infinite;
+  box-shadow: 0 4px 10px rgba(37,99,235,.14);
+  animation: fy 5s ease-in-out infinite;
 }
 
-.fb.a {
-  left: 2%;
-  top: 14%;
-  --r: -8deg;
-}
+.fb.a { left: 10px; top: 10px; }
+.fb.b { right: 10px; top: 10px; animation-delay: -1s; }
+.fb.c { left: 12px; top: 50px; animation-delay: -2s; }
+.fb.d { right: 12px; top: 50px; animation-delay: -3s; }
 
-.fb.b {
-  right: 3%;
-  top: 9%;
-  --r: 8deg;
-  font-size: 26px;
-  animation-duration: 5s;
-  animation-delay: -1s;
-}
-
-.fb.c {
-  left: 4%;
-  bottom: 19%;
-  --r: 6deg;
-  animation-duration: 4.5s;
-  animation-delay: -2s;
-}
-
-.fb.d {
-  right: 5%;
-  bottom: 23%;
-  --r: -6deg;
-  font-size: 24px;
-  animation-duration: 5.5s;
-  animation-delay: -3s;
-}
-
-@media (prefers-reduced-motion:reduce) {.fb{animation:none;transform:rotate(var(--r))}}
+@media (prefers-reduced-motion:reduce) {.fb{animation:none}}
 
 .pill {
   display: inline-flex;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
-  font-size: 11px;
-  letter-spacing: .14em;
+  font-size: 10px;
+  letter-spacing: .12em;
   font-weight: 600;
   color: var(--or);
   border: 1px solid var(--line);
   background: rgba(255,255,255,.9);
-  border-radius: 99px;
-  padding: 7px 14px;
+  border-radius: 8px;
+  padding: 4px 10px;
 }
 
 .pill s {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #22c55e;
 }
 
 h1 {
-  font-size: 34px;
-  margin: 16px 0 8px;
-  line-height: 1.12;
+  font-size: 22px;
+  margin: 0 0 6px;
+  line-height: 1.2;
 }
 
 .sub {
   color: #3b4a63;
-  font-size: 15px;
-  padding: 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 6px;
+  max-width: 38ch;
 }
 
 .stats {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  margin-top: 20px;
+  margin-top: 14px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 14px 0;
+  border-radius: 12px;
+  padding: 8px 0;
 }
 
 .stats div {
-  font-size: 11px;
-  letter-spacing: .12em;
+  font-size: 10.5px;
+  letter-spacing: .08em;
   color: var(--mut);
+  line-height: 1.2;
 }
 
 .stats b {
   display: block;
-  font-size: 26px;
+  font-size: 16px;
   color: var(--tx);
   letter-spacing: 0;
+  margin-bottom: 2px;
+}
+
+/* Hero utama: banner tinggi tetap, judul tumpang-tindih sedikit di area pudar */
+.hero.ph {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  padding: calc(var(--hero-h) - 30px) 0 14px;
+  margin: 10px 10px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-align: left;
 }
 
 .hero.ph::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 760px;
-  aspect-ratio: 1/var(--banner-ratio);
-  background: var(--banner) center/100% 100% no-repeat;
-  -webkit-mask-image: linear-gradient(#000 88%,transparent);
-  mask-image: linear-gradient(#000 88%,transparent);
+  left: 0;
+  right: 0;
+  height: var(--hero-h);
+  background: var(--banner) center 30%/cover no-repeat;
+  -webkit-mask-image: linear-gradient(#000 55%,transparent);
+  mask-image: linear-gradient(#000 55%,transparent);
+  pointer-events: none;
 }
 
-.hero.ph .fb.a {
-  top: 14px;
-  left: 2%;
-}
-
-.hero.ph .fb.b {
-  top: 10px;
-  right: 3%;
-}
-
-.hero.ph .fb.c {
-  top: min(36vw,150px);
-  bottom: auto;
-  left: 3%;
-}
-
-.hero.ph .fb.d {
-  top: min(32vw,135px);
-  bottom: auto;
-  right: 4%;
+.hero.ph .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .hero.ph h1,
 .hero.ph .sub {
-  text-shadow: 0 1px 10px rgba(255,255,255,.9);
+  text-shadow: 0 1px 8px rgba(255,255,255,.95);
 }
 
-.hero h1 {
-  font-size: 30px;
-  letter-spacing: -.02em;
+.hero.ph h1 {
+  font-size: 25px;
+  letter-spacing: -.01em;
+  margin: 0 0 6px;
 }
 
-.hero.ph {
+.hero.ph .stats {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.hero.ph .stats div {
   background: #fff;
-  padding-top: calc((min(100vw,760px) - 24px)*var(--banner-ratio) - 24px);
-  padding-bottom: 26px;
-  margin: 12px 12px 0;
   border: 1px solid var(--line);
-  border-radius: 28px;
-  text-align: left;
+  border-radius: 10px;
+  padding: 9px 4px;
+  text-align: center;
+}
+
+.hero.ph .stats b {
+  font-size: 19px;
+  margin-bottom: 2px;
+}
+
+.hero.ph .pill {
+  border-radius: 8px;
 }
 
 .hero.ph.lg {
   text-align: center;
 }
 
-.hero.ph .stats {
-  background: transparent;
-  backdrop-filter: none;
-  border: 0;
-  padding: 0;
-  gap: 8px;
-}
-
-.hero.ph .stats div {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 12px 0;
-  text-align: center;
-}
-
-.hero.ph .pill {
-  border-radius: 10px;
-}
-
-.fb.b,
-.fb.d {
-  font-size: 15px!important;
-}
-
+/* Halaman login: banner penuh di atas */
 .hero.ph.lgx {
   margin: 0;
   border: 0;
-  border-radius: 0 0 32px 32px;
-  padding: calc(min(100vw,760px)*var(--banner-ratio)) 0 0;
+  border-radius: 0 0 24px 24px;
+  padding: var(--hero-h) 0 0;
   background: #fff;
 }

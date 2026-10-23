@@ -34,5 +34,8 @@ module.exports = async (req, res) => {
   if (t.n >= 5) { t.until = now + 60000; t.n = 0; }
   tries.set(ip, t);
   await sleep(400);
-  return res.status(401).json({ error: 'ID admin atau kata sandi salah.' });
+  const msg = !userOk && !passOk ? 'Password dan username anda salah.'
+    : !userOk ? 'Username anda salah.'
+    : 'Password anda salah.';
+  return res.status(401).json({ error: msg });
 };

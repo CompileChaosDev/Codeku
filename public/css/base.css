@@ -84,7 +84,8 @@ body {
   background: var(--bg);
   color: var(--tx);
   font-family: 'Plus Jakarta Sans',system-ui,sans-serif;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.45;
   overflow-x: hidden;
 }
 

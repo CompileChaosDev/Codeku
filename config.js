@@ -1,4 +1,4 @@
-Yo// =====================================================================
+// =====================================================================
 //  config.js  —  SATU-SATUNYA file pengaturan Lixx
 //  Ubah di sini saja, semua bagian web ikut berubah.
 // =====================================================================
@@ -26,17 +26,16 @@ module.exports = {
   // ------------------------------------------------------------------
   database: {
     url: 'https://hznogytijknwzrqugdfz.supabase.co',               // contoh: https://abcdxyz.supabase.co
-    serviceRoleKey: 'sb_publishable_JXdEAJAIDe9JXLXmML4Xhg__aZHYlwf', // kunci "service_role" / "secret" dari Supabase
+    serviceRoleKey: 'sb_publishable_JXdEAJAIDe9JXLXmML4Xhg__aZHYlwf', // tempel kunci sb_secret_... dari Supabase (BUKAN publishable)
   },
 
   // ------------------------------------------------------------------
   //  ADMIN  (RAHASIA)
   // ------------------------------------------------------------------
-admin: {
-  username: 'Malixx',
-  password: 'Lixx1',
-  sessionSecret: 'aa3c47880a7af36e54927e2325f006f720cb50692045266b',
-},
+  admin: {
+    username: 'Malixx', // ganti: username login admin
+    password: 'lixx12', // ganti: password login admin (huruf & angka saja, tanpa tanda ')
+  },
 };
 
 // CATATAN KEAMANAN

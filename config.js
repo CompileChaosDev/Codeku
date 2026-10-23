@@ -20,26 +20,9 @@ module.exports = {
     channelLink: 'https://whatsapp.com/channel/0029VbE1ZfX1CYobADYvjY0o',
   },
 
-  // ------------------------------------------------------------------
-  //  DATABASE  (RAHASIA — jangan dipublikasikan)
-  //  Cara dapat nilainya: lihat README.md bagian "Buat database".
-  // ------------------------------------------------------------------
-  database: {
-    url: 'https://hznogytijknwzrqugdfz.supabase.co',               // contoh: https://abcdxyz.supabase.co
-    serviceRoleKey: 'sb_publishable_JXdEAJAIDe9JXLXmML4Xhg__aZHYlwf', // tempel kunci sb_secret_... dari Supabase (BUKAN publishable)
-  },
-
-  // ------------------------------------------------------------------
-  //  ADMIN  (RAHASIA)
-  // ------------------------------------------------------------------
-  admin: {
-    username: 'Malixx', // ganti: username login admin
-    password: 'lixx12', // ganti: password login admin (huruf & angka saja, tanpa tanda ')
-  },
+  // Database & admin TIDAK ditulis di sini.
+  // Semuanya diisi lewat Vercel -> Environment Variables:
+  //   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ADMIN_USER, ADMIN_PASSWORD
 };
 
-// CATATAN KEAMANAN
-//  - File ini hanya dibaca server. Browser TIDAK pernah menerima isi database/admin;
-//    yang dikirim ke pengunjung hanya bagian "site".
-//  - Jangan unggah file ini ke GitHub PUBLIK. Pakai repo private,
-//    atau isi nilainya lewat Environment Variables Vercel (lihat README).
+// CATATAN: file ini aman diunggah ke GitHub karena tidak berisi rahasia.

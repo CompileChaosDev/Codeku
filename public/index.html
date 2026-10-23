@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lixx — Koleksi Snippet</title>
+<meta name="description" content="Koleksi snippet kode siap pakai.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/hero.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+<div class="ov" onclick="menu(0)"></div>
+<aside class="dr">
+  <div class="dh"><div class="logo"><i></i><span data-brand></span></div><button class="ib" onclick="menu(0)" aria-label="Tutup"><u data-ic="close"></u></button></div>
+  <button class="nv" data-nav="home" onclick="go('home')"><i><u data-ic="home"></u></i>Home</button>
+  <button class="nv" data-nav="login" onclick="go(authed?'admin':'login')"><i><u data-ic="shield"></u></i><span id="adl">Login Admin</span></button>
+  <a class="nv" id="chl" href="#" target="_blank" rel="noopener noreferrer" onclick="menu(0)"><i><u data-ic="chat"></u></i>Channel WhatsApp</a>
+  <div class="cp">© <span data-name></span></div>
+</aside>
+<header><div class="wrap hd"><button class="ib" onclick="menu(1)" aria-label="Menu"><u data-ic="menu"></u></button><div class="logo" onclick="go('home')"><i></i><span data-brand></span></div></div></header>
+<main id="app"></main>
+<div class="toast" id="toast"></div>
+<script src="/js/utils.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/state.js"></script>
+<script src="/js/views.js"></script>
+<script src="/js/router.js"></script>
+</body>
+</html>

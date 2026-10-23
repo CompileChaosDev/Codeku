@@ -1,0 +1,7 @@
+{
+  "name": "lixx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lixx - koleksi snippet kode (Vercel + Supabase)",
+  "engines": { "node": ">=18" }
+}
